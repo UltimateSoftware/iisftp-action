@@ -1,0 +1,23 @@
+name: 'iisftp'
+description: 'Create public keys and sftp folder mappings in the integration platform client'
+inputs:
+  app-config:
+    description: 'Payload'
+    required: no
+  integrations-config:
+    description: 'Configuration'
+    required: no
+  flags:
+    description: '--dry-run|--insecure/-k|--output-format <json|yaml>/-o|--logs/-l'
+    required: false
+runs:
+  using: 'docker'
+  image: 'docker://fdn-sre-docker-dev.mia.ulti.io/tip/iisftp:latest'
+  env:
+    APP_CONFIG: ${{inputs.app-config}}
+    INTEGRATIONS_CONFIG: ${{inputs.integrations-config}}
+  args:
+    - ${{inputs.flags}}
+branding:
+  icon: 'folder-plus'
+  color: 'green'
