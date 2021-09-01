@@ -9,7 +9,7 @@ inputs:
     required: false
 runs:
   using: 'docker'
-  image: 'docker://fdn-sre-docker-dev.mia.ulti.io/tip/iisftp:0.2.1-0715b99'
+  image: 'docker://fdn-sre-docker-dev.mia.ulti.io/tip/iisftp:latest'
   env:
     INTEGRATIONS_CONFIG: ${{inputs.integrations-config}}
   args:
