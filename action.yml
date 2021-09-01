@@ -3,10 +3,13 @@ description: 'Create public keys and sftp folder mappings in the integration pla
 inputs:
   integrations-config:
     description: 'Configuration'
-    required: no
+    required: yes
   flags:
     description: '--dry-run|--insecure/-k|--output-format <json|yaml>/-o|--logs/-l|-d/--data "[changed-files]"'
-    required: false
+    required: no
+outputs:
+  logs:
+    description: 'Result of the process execution'
 runs:
   using: 'docker'
   image: 'docker://fdn-sre-docker-dev.mia.ulti.io/tip/iisftp:latest'
