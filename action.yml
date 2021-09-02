@@ -3,7 +3,7 @@ description: 'Create public keys and sftp folder mappings in the integration pla
 inputs:
   integrations-config:
     description: 'Configuration'
-    required: yes
+    required: no
   flags:
     description: '--dry-run|--insecure/-k|--output-format <json|yaml>/-o|--logs/-l|-d/--data "[changed-files]"'
     required: no
